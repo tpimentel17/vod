@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -11,7 +13,8 @@ import { SigninComponent } from './components/signin/signin.component';
     SigninComponent
   ],
   imports: [
-    CommonModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class AuthenticationModule { }
