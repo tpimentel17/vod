@@ -1,19 +1,18 @@
 <h3>Signup:</h3>
 
 <form [formGroup]="signupForm">
-    <div>
-        <label for="name">Name:</label>
-        <input id="name" type="email" formControlName="name" />
-    </div>
-    <div>
-        <label for="email">Email:</label>
-        <input id="email" type="email" formControlName="email" />
-    </div>
-    <div>
-        <label for="password">Pasword:</label>
-        <input id="password" type="password" formControlName="password" />
-    </div>
-
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" type="email" formControlName="name" />
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" />
+  </div>
+  <div>
+    <label for="password">Pasword:</label>
+    <input id="password" type="password" formControlName="password" />
+  </div>
 </form>
 
 <button (click)="signup()">Sign up</button>

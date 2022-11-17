@@ -1,14 +1,14 @@
 <h3>Login:</h3>
 
 <form [formGroup]="signinForm">
-    <div>
-        <label for="email">Email:</label>
-        <input id="email" type="email" formControlName="email" />
-    </div>
-    <div>
-        <label for="password">Pasword:</label>
-        <input id="password" type="password" formControlName="password" />
-    </div>
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" />
+  </div>
+  <div>
+    <label for="password">Pasword:</label>
+    <input id="password" type="password" formControlName="password" />
+  </div>
 </form>
 
 <button (click)="signin()">Login</button>

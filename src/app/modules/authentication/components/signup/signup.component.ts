@@ -6,22 +6,25 @@ import { BaseComponent } from 'src/app/modules/shared/components/base/base.compo
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent extends BaseComponent implements OnInit {
   signupForm: FormGroup = {} as FormGroup;
 
-  constructor(private readonly formBuilder: FormBuilder, private readonly authService: AuthenticationService) {
+  constructor(
+    private readonly formBuilder: FormBuilder,
+    private readonly authService: AuthenticationService
+  ) {
     super();
   }
 
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
-      name:['', Validators.required],
+      name: ['', Validators.required],
       email: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
     });
   }
 
-  signup():void{}
+  signup(): void {}
 }

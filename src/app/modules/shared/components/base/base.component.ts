@@ -4,19 +4,15 @@ import { Subject } from 'rxjs';
 @Component({
   selector: 'app-base',
   templateUrl: './base.component.html',
-  styleUrls: ['./base.component.scss']
+  styleUrls: ['./base.component.scss'],
 })
 export class BaseComponent implements OnDestroy {
-
   protected readonly ngUnsubscribe = new Subject<void>();
 
-  constructor() { }
+  constructor() {}
 
   ngOnDestroy(): void {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
   }
-
-
-
 }

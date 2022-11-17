@@ -5,19 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
-
-
-
 @NgModule({
-  declarations: [
-    BaseComponent,
-    PageNotFoundComponent
-  ],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ]
+  declarations: [BaseComponent, PageNotFoundComponent],
+  imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
 })
-export class SharedModule { }
+export class SharedModule {}
