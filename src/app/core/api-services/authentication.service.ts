@@ -30,6 +30,10 @@ export class AuthenticationService {
       );
   }
 
+  getUsers(): Observable<any> {
+    return this.http.get<any>(this.baseUrl);
+  }
+
   getAuthenticationState(): Observable<boolean> {
     return this.isSignedIn;
   }

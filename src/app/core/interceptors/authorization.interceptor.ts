@@ -21,8 +21,7 @@ export class AuthorizationInterceptor implements HttpInterceptor {
 
     if (token) {
       request = request.clone({
-        headers: request.headers.set('Authorization', token),
-        // .set('Access-Control-Allow-Origin', '*'),
+        headers: request.headers.set('Authorization', 'Bearer ' + token),
       });
     }
 

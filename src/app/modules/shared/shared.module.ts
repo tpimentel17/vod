@@ -8,5 +8,6 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 @NgModule({
   declarations: [BaseComponent, PageNotFoundComponent],
   imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
+  exports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
 })
 export class SharedModule {}
