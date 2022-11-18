@@ -1,8 +1,9 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable, of } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { AuthenticationService } from 'src/app/core/api-services/authentication.service';
-import { Authorization } from 'src/app/core/enums/authorization.enum';
 import { Credentials } from 'src/app/core/models/credentials.model';
 import { SignInResponse } from 'src/app/core/models/signin-response.model';
 import { BaseComponent } from 'src/app/modules/shared/components/base/base.component';
@@ -15,9 +16,12 @@ import { BaseComponent } from 'src/app/modules/shared/components/base/base.compo
 export class SigninComponent extends BaseComponent implements OnInit {
   signinForm: FormGroup = {} as FormGroup;
 
+  users$: Observable<any[]> = of([]);
+
   constructor(
     private readonly formBuilder: FormBuilder,
-    private readonly authService: AuthenticationService
+    private readonly authService: AuthenticationService,
+    private readonly router: Router
   ) {
     super();
   }
@@ -27,6 +31,7 @@ export class SigninComponent extends BaseComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required],
     });
+
   }
 
   signin(): void {
@@ -42,8 +47,13 @@ export class SigninComponent extends BaseComponent implements OnInit {
         .signIn(credentials)
         .pipe(takeUntil(this.ngUnsubscribe))
         .subscribe({
-          next: (response: SignInResponse) => console.log(response),
-          error: (err) => console.error(err),
+          next: () => {
+            this.router.navigateByUrl('');
+          },
+          error: (err) => {
+            alert(err.message);
+            console.error(err);
+          },
         });
     }
   }

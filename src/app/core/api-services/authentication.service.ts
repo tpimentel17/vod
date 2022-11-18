@@ -1,3 +1,4 @@
+import { User } from './../models/user.model';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Credentials } from '../models/credentials.model';
@@ -15,8 +16,11 @@ export class AuthenticationService {
 
   constructor(private readonly http: HttpClient) {
     const token = sessionStorage.getItem(Authorization.AUTH_TOKEN);
-
     this.isSignedIn.next(!!token);
+  }
+
+  signUp(user: User): Observable<string> {
+    return this.http.post<string>(this.baseUrl + 'signup', user);
   }
 
   signIn(credentials: Credentials): Observable<SignInResponse> {
@@ -26,8 +30,14 @@ export class AuthenticationService {
         tap((response: SignInResponse) => {
           this.isSignedIn.next(true);
           sessionStorage.setItem(Authorization.AUTH_TOKEN, response.token);
+          sessionStorage.setItem(Authorization.AUTH_ROLE, response.role);
         })
       );
+  }
+
+  signOut() {
+    sessionStorage.clear();
+    this.isSignedIn.next(false);
   }
 
   getUsers(): Observable<any> {

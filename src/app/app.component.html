@@ -1,1 +1,4 @@
-<router-outlet></router-outlet>
+<div class="app-wrapper">
+  <app-dashboard *ngIf="userLoggedIn$ | async"></app-dashboard>
+  <router-outlet></router-outlet>
+</div>

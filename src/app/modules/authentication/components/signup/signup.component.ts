@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/core/api-services/authentication.service';
+import { User } from 'src/app/core/models/user.model';
 import { BaseComponent } from 'src/app/modules/shared/components/base/base.component';
 
 @Component({
@@ -13,7 +15,8 @@ export class SignupComponent extends BaseComponent implements OnInit {
 
   constructor(
     private readonly formBuilder: FormBuilder,
-    private readonly authService: AuthenticationService
+    private readonly authService: AuthenticationService,
+    private readonly router: Router
   ) {
     super();
   }
@@ -26,5 +29,23 @@ export class SignupComponent extends BaseComponent implements OnInit {
     });
   }
 
-  signup(): void {}
+  signup(): void {
+    const form = this.signupForm.value;
+
+    if (this.signupForm.valid) {
+      let user: User = {
+        name: form.name,
+        email: form.email,
+        password: form.password,
+      };
+
+      this.authService.signUp(user).subscribe({
+        next: () => this.router.navigateByUrl(''),
+        error: (err) => {
+          alert(err.message);
+          console.error(err);
+        },
+      });
+    }
+  }
 }
