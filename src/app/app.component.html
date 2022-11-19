@@ -1,4 +1,2 @@
-<div class="app-wrapper">
-  <app-dashboard *ngIf="userLoggedIn$ | async"></app-dashboard>
-  <router-outlet></router-outlet>
-</div>
+<app-navigation-bar *ngIf="userLoggedIn$ | async"></app-navigation-bar>
+<router-outlet></router-outlet>

@@ -1,0 +1,14 @@
+.nav-bar-row {
+  display: flex;
+  justify-content: space-between;
+
+  .left-side-wrapper {
+    display: flex;
+
+    .title {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

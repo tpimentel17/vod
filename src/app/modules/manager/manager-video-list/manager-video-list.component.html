@@ -1,0 +1,14 @@
+<div class="video-catalogue-container">
+  <h2>Video Catalogue</h2>
+
+  <mat-list role="list" *ngFor="let video of videoCatalogue$ | async">
+    <mat-list-item role="listitem">
+      {{ video.title }} {{ video._id }}
+      <div class="remove-icon-wrapper">
+        <mat-icon class="remove-icon" (click)="remove(video._id)">
+          close
+        </mat-icon>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</div>

@@ -1,11 +1,11 @@
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { Observable, of } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { AuthenticationService } from 'src/app/core/api-services/authentication.service';
 import { Credentials } from 'src/app/core/models/credentials.model';
-import { SignInResponse } from 'src/app/core/models/signin-response.model';
 import { BaseComponent } from 'src/app/modules/shared/components/base/base.component';
 
 @Component({
@@ -15,8 +15,8 @@ import { BaseComponent } from 'src/app/modules/shared/components/base/base.compo
 })
 export class SigninComponent extends BaseComponent implements OnInit {
   signinForm: FormGroup = {} as FormGroup;
-
   users$: Observable<any[]> = of([]);
+  hidePassword = true;
 
   constructor(
     private readonly formBuilder: FormBuilder,
@@ -31,7 +31,6 @@ export class SigninComponent extends BaseComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required],
     });
-
   }
 
   signin(): void {

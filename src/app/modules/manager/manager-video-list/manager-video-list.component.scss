@@ -1,0 +1,15 @@
+.video-catalogue-container {
+  padding: 0 1%;
+
+  .remove-icon-wrapper {
+    padding-left: 1%;
+
+    .remove-icon {
+      background-color: red;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

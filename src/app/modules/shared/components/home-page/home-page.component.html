@@ -1,4 +1,6 @@
 <h1>Welcome to your VOD</h1>
 
-<a routerLink="signin"><button>Signin</button></a>
-<a routerLink="signup"><button>Signup</button></a>
+<ng-container *ngIf="!(isSignedIn$ | async)">
+  <a routerLink="signin"><button>Signin</button></a>
+  <a routerLink="signup"><button>Signup</button></a>
+</ng-container>

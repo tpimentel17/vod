@@ -12,7 +12,7 @@ import { BaseComponent } from 'src/app/modules/shared/components/base/base.compo
 })
 export class SignupComponent extends BaseComponent implements OnInit {
   signupForm: FormGroup = {} as FormGroup;
-
+  hidePassword = true;
   constructor(
     private readonly formBuilder: FormBuilder,
     private readonly authService: AuthenticationService,
