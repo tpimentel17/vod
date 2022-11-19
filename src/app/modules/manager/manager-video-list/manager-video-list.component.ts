@@ -10,6 +10,8 @@ import { BaseComponent } from '../../shared/components/base/base.component';
   styleUrls: ['./manager-video-list.component.scss'],
 })
 export class ManagerVideoListComponent extends BaseComponent implements OnInit {
+ 
+ 
   constructor(private readonly videoService: VideoService) {
     super();
   }
@@ -21,7 +23,9 @@ export class ManagerVideoListComponent extends BaseComponent implements OnInit {
   }
 
   remove(id: string) {
-    this.videoService.deleteVideo(id).subscribe();
+    this.videoService.deleteVideo(id).subscribe({
+      error: (err) => alert(err.message),
+    });
     this.videoCatalogue$ = this.videoService.getAllVideos();
   }
 }

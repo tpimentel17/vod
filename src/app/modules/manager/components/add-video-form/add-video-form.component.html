@@ -1,0 +1,65 @@
+<div class="component-wrapper">
+  <h2>Add video to Catalogue</h2>
+
+  <form [formGroup]="addVideoForm">
+    <div class="form-wrapper">
+      <mat-form-field>
+        <mat-label>Enter the title</mat-label>
+        <input matInput formControlName="title" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Enter the synopsis</mat-label>
+        <textarea matInput formControlName="synopsis"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Enter the director's name</mat-label>
+        <input matInput formControlName="director" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Enter the cast name</mat-label>
+        <mat-chip-list #castChipList required>
+          <mat-chip
+            *ngFor="let castName of castFormFieldEntries"
+            (removed)="removeCastNameChip(castName)"
+          >
+            {{ castName }}
+            <button matChipRemove>
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip>
+          <input
+            required
+            placeholder="New cast member.."
+            [matChipInputFor]="castChipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            (matChipInputTokenEnd)="addCastNameChip($event)"
+            formControlName="cast"
+          />
+        </mat-chip-list>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category">
+          <mat-option
+            *ngFor="let category of categories$ | async"
+            [value]="category._id"
+          >
+            {{ category.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Enter the poster link</mat-label>
+        <input matInput formControlName="poster" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Enter the stream URL</mat-label>
+        <input matInput formControlName="streamURL" />
+      </mat-form-field>
+    </div>
+  </form>
+
+  <button mat-stroked-button (click)="addVideo()">Add</button>
+</div>

@@ -1,4 +1,4 @@
-import { Video } from './../models/video.model';
+import { NewVideo, Video } from './../models/video.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -17,5 +17,9 @@ export class VideoService {
 
   deleteVideo(videoId: string): Observable<any> {
     return this.http.delete<any>(this.baseUrl + videoId);
+  }
+
+  addVideo(video: NewVideo): Observable<any> {
+    return this.http.post<any>(this.baseUrl, video);
   }
 }

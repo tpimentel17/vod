@@ -1,3 +1,9 @@
-.component-wrapper{
-    padding: 0 1%;
+.component-wrapper {
+  padding: 0 1%;
+
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+  }
 }

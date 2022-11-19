@@ -26,6 +26,10 @@ export class NavigationBarComponent implements OnInit {
     this.router.navigateByUrl('');
   }
 
+  navigateToAddVideo() {
+    this.router.navigateByUrl('/manager/addVideo');
+  }
+
   get showManager(): boolean {
     return sessionStorage.getItem(Authorization.AUTH_ROLE) === Roles.MANAGER;
   }

@@ -24,7 +24,7 @@ export class SignupComponent extends BaseComponent implements OnInit {
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
       name: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', Validators.required, Validators.email],
       password: ['', Validators.required],
     });
   }

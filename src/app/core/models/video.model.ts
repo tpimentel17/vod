@@ -9,3 +9,13 @@ export interface Video {
   poster: string;
   streamURL: string;
 }
+
+export interface NewVideo {
+  cast: string[];
+  title: string;
+  synopsis: string;
+  director: string;
+  category: string;
+  poster: string;
+  streamURL: string;
+}

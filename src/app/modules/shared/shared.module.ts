@@ -16,6 +16,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { MatInputModule } from '@angular/material/input';
     MatIconModule,
     MatInputModule,
     BrowserAnimationsModule,
+    MatChipsModule,
+    MatSelectModule,
   ],
   exports: [
     NavigationBarComponent,
@@ -54,6 +58,8 @@ import { MatInputModule } from '@angular/material/input';
     MatIconModule,
     MatInputModule,
     BrowserAnimationsModule,
+    MatChipsModule,
+    MatSelectModule,
   ],
 })
 export class SharedModule {}

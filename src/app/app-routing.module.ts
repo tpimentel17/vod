@@ -6,6 +6,7 @@ import { SigninComponent } from './modules/authentication/components/signin/sign
 import { SignupComponent } from './modules/authentication/components/signup/signup.component';
 import { PageNotFoundComponent } from './modules/shared/components/page-not-found/page-not-found.component';
 import { ManagerVideoListComponent } from './modules/manager/manager-video-list/manager-video-list.component';
+import { AddVideoFormComponent } from './modules/manager/components/add-video-form/add-video-form.component';
 
 const routes: Routes = [
   { path: 'signup', component: SignupComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
     component: ManagerHomeComponent,
     children: [
       { path: '', component: ManagerVideoListComponent, pathMatch: 'full' },
+      { path: 'addVideo', component: AddVideoFormComponent },
     ],
   },
   { path: '', component: HomePageComponent, pathMatch: 'full' },
