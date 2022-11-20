@@ -1,7 +1,7 @@
 import { Roles } from './../../../../core/enums/authorization.enum';
 import { AuthenticationService } from '../../../../core/api-services/authentication.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Authorization } from 'src/app/core/enums/authorization.enum';
 
 @Component({

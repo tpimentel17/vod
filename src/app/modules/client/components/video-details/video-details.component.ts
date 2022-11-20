@@ -14,24 +14,6 @@ import { BaseComponent } from 'src/app/modules/shared/components/base/base.compo
   styleUrls: ['./video-details.component.scss'],
 })
 export class VideoDetailsComponent extends BaseComponent implements OnInit {
-  //TODO Apagar quando a Api funcionar
-
-  // video: Video = {
-  //   _id: 'dsadsada',
-  //   cast: ['Antonio Bandeiras', 'Jean Claude Vac Ban'],
-  //   rate: [2, 3, 5],
-  //   title: 'The Incredibles',
-  //   synopsis:
-  //     'While trying to lead a quiet suburban life, a family of undercover superheroes are forced into action to save the world.',
-  //   director: 'Brad Bird',
-  //   category: 'dsadsad',
-  //   poster: 'https://m.media-amazon.com/images/I/71kod5t-q9L._AC_SY879_.jpg',
-  //   streamURL: 'https://www.youtube.com/embed/-UaGUdNJdRQ',
-  // };
-
-  //video$: Observable<Video> = of(this.video);
-  //-----------------------------------------------------
-
   video$: Observable<Video> = of({} as Video);
   categories: Category[] = [];
   rateValues: number[] = [1, 2, 3, 4, 5];

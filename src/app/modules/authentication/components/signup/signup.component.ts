@@ -24,7 +24,7 @@ export class SignupComponent extends BaseComponent implements OnInit {
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
       name: ['', Validators.required],
-      email: ['', Validators.required, Validators.email],
+      email: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
@@ -46,6 +46,8 @@ export class SignupComponent extends BaseComponent implements OnInit {
           console.error(err);
         },
       });
+    } else {
+      alert('Invalid Data');
     }
   }
 
