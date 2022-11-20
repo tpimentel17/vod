@@ -1,0 +1,15 @@
+.component-wrapper {
+  padding: 0 1%;
+
+  .video-info {
+    display: flex;
+
+    .details-container {
+      padding-left: 2%;
+
+      .watch-button {
+        margin-top: 2%;
+      }
+    }
+  }
+}

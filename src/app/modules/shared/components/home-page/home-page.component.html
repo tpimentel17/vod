@@ -1,6 +1,10 @@
 <h1>Welcome to your VOD</h1>
 
 <ng-container *ngIf="!(isSignedIn$ | async)">
-  <a routerLink="signin"><button>Signin</button></a>
-  <a routerLink="signup"><button>Signup</button></a>
+  <button mat-flat-button color="primary" (click)="navigateToSignin()">
+    Signin
+  </button>
+  <button mat-flat-button color="primary" (click)="navigateToSignup()">
+    Signup
+  </button>
 </ng-container>

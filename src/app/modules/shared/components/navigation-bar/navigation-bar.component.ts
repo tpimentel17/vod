@@ -31,6 +31,6 @@ export class NavigationBarComponent implements OnInit {
   }
 
   get showManager(): boolean {
-    return sessionStorage.getItem(Authorization.AUTH_ROLE) === Roles.MANAGER;
+    return this.authService.getRole() === Roles.MANAGER;
   }
 }

@@ -1,0 +1,56 @@
+<div class="component-wrapper">
+  <ng-container *ngIf="video$ | async as video">
+    <h1>{{ video.title }}</h1>
+
+    <div class="video-info">
+      <img src="{{ video.poster }}" width="30%" />
+
+      <div class="details-container">
+        <div>
+          <h4>Cast:</h4>
+          {{ video.cast }};
+        </div>
+        <div>
+          <h4>Director:</h4>
+          {{ video.director }};
+        </div>
+        <div>
+          <h4>Category:</h4>
+          {{ getCategory(video.category) }};
+        </div>
+
+        <div>
+          <h4>Synopsis:</h4>
+          {{ video.synopsis }}
+        </div>
+        <div>
+          <h4>Rate:</h4>
+          {{ calculateRating(video.rate) }} / 5
+        </div>
+
+        <button
+          class="watch-button"
+          mat-flat-button
+          color="primary"
+          (click)="openVideo(video.streamURL)"
+        >
+          Click To Watch
+        </button>
+      </div>
+    </div>
+
+    <hr />
+
+    <mat-form-field>
+      <mat-label>Rate this movie</mat-label>
+      <mat-select [(ngModel)]="selectedRate">
+        <mat-option *ngFor="let rate of rateValues" [value]="rate">
+          {{ rate }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-flat-button color="primary" (click)="submitRating()">
+      Submit Rating
+    </button>
+  </ng-container>
+</div>

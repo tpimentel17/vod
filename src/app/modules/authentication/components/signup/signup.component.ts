@@ -48,4 +48,8 @@ export class SignupComponent extends BaseComponent implements OnInit {
       });
     }
   }
+
+  back(): void {
+    this.router.navigateByUrl('');
+  }
 }

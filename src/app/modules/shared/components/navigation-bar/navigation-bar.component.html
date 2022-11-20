@@ -3,12 +3,12 @@
     <div class="left-side-wrapper">
       <div class="title" (click)="navigateToHomepage()">Your VOD</div>
       <ng-container *ngIf="showManager"
-        ><button mat-flat-button color="primary" (click)="navigateToAddVideo()">
+        ><button mat-button (click)="navigateToAddVideo()">
           Add Video
         </button></ng-container
       >
     </div>
 
-    <button mat-flat-button color="primary" (click)="logout()">Logout</button>
+    <button mat-button (click)="logout()">Logout</button>
   </mat-toolbar-row>
 </mat-toolbar>

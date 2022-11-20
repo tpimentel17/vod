@@ -1,0 +1,13 @@
+<div class="component-wrapper">
+  <h2>Video Catalogue</h2>
+
+  <mat-selection-list [multiple]="false">
+    <mat-list-option
+      (click)="navigateToDetails(video._id)"
+      *ngFor="let video of videoCatalogue$ | async"
+      [value]="video._id"
+    >
+      {{ video.title }}
+    </mat-list-option>
+  </mat-selection-list>
+</div>

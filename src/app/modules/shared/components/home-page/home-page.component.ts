@@ -23,7 +23,15 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
     this.isSignedIn$ = this.authService.getAuthenticationState();
 
-    if (sessionStorage.getItem(Authorization.AUTH_ROLE) === Roles.MANAGER)
-      this.router.navigateByUrl('manager');
+    if (this.authService.getRole())
+      this.router.navigateByUrl(this.authService.getRole()!);
+  }
+
+  navigateToSignin() {
+    this.router.navigateByUrl('signin');
+  }
+
+  navigateToSignup() {
+    this.router.navigateByUrl('signup');
   }
 }

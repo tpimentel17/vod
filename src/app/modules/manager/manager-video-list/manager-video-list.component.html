@@ -3,11 +3,9 @@
 
   <mat-list role="list" *ngFor="let video of videoCatalogue$ | async">
     <mat-list-item role="listitem">
-      {{ video.title }} {{ video._id }}
+      {{ video.title }}
       <div class="remove-icon-wrapper">
-        <mat-icon class="remove-icon" (click)="remove(video._id)">
-          close
-        </mat-icon>
+        <mat-icon class="remove-icon" (click)="remove(video._id)"> close </mat-icon>
       </div>
     </mat-list-item>
   </mat-list>

@@ -47,4 +47,8 @@ export class AuthenticationService {
   getAuthenticationState(): Observable<boolean> {
     return this.isSignedIn;
   }
+
+  getRole(): string | null {
+    return sessionStorage.getItem(Authorization.AUTH_ROLE);
+  }
 }

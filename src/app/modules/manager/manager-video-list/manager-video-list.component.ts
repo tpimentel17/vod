@@ -10,13 +10,11 @@ import { BaseComponent } from '../../shared/components/base/base.component';
   styleUrls: ['./manager-video-list.component.scss'],
 })
 export class ManagerVideoListComponent extends BaseComponent implements OnInit {
- 
- 
+  videoCatalogue$: Observable<Video[]> = of([]);
+
   constructor(private readonly videoService: VideoService) {
     super();
   }
-
-  videoCatalogue$: Observable<Video[]> = of([]);
 
   ngOnInit(): void {
     this.videoCatalogue$ = this.videoService.getAllVideos();

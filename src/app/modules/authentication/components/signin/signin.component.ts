@@ -56,4 +56,8 @@ export class SigninComponent extends BaseComponent implements OnInit {
         });
     }
   }
+
+  back(): void {
+    this.router.navigateByUrl('');
+  }
 }
