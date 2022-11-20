@@ -1,10 +1,12 @@
-<h1>Welcome to your VOD</h1>
+<div class="component-wrapper">
+  <h1>Welcome to your VOD</h1>
 
-<ng-container *ngIf="!(isSignedIn$ | async)">
-  <button mat-flat-button color="primary" (click)="navigateToSignin()">
-    Signin
-  </button>
-  <button mat-flat-button color="primary" (click)="navigateToSignup()">
-    Signup
-  </button>
-</ng-container>
+  <ng-container *ngIf="!(isSignedIn$ | async)">
+    <button mat-flat-button color="primary" (click)="navigateToSignin()">
+      Signin
+    </button>
+    <button class="signup-button" mat-flat-button color="primary" (click)="navigateToSignup()">
+      Signup
+    </button>
+  </ng-container>
+</div>

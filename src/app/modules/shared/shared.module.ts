@@ -1,3 +1,4 @@
+import { SearchVideoPipe } from './../../core/pipes/search-video.pipe';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -25,6 +26,7 @@ import { MatSelectModule } from '@angular/material/select';
     PageNotFoundComponent,
     NavigationBarComponent,
     HomePageComponent,
+    SearchVideoPipe,
   ],
   imports: [
     CommonModule,
@@ -44,6 +46,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatSelectModule,
   ],
   exports: [
+    SearchVideoPipe,
     NavigationBarComponent,
     CommonModule,
     HttpClientModule,

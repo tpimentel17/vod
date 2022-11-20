@@ -1,6 +1,6 @@
 import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
-import { ManagerVideoListComponent } from './manager-video-list/manager-video-list.component';
+import { ManagerVideoListComponent } from './components/manager-video-list/manager-video-list.component';
 import { ManagerHomeComponent } from './components/manager-home/manager-home.component';
 
 import { AddVideoFormComponent } from './components/add-video-form/add-video-form.component';

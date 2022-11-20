@@ -11,6 +11,7 @@ import { Video } from 'src/app/core/models/video.model';
 })
 export class ClientVideoListComponent implements OnInit {
   videoCatalogue$: Observable<Video[]> = of([]);
+  searchTerm: string = '';
 
   constructor(
     private readonly videoService: VideoService,

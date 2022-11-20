@@ -3,7 +3,7 @@
     <h1>{{ video.title }}</h1>
 
     <div class="video-info">
-      <img src="{{ video.poster }}" width="30%" />
+      <img alt="Video Poster" src="{{ video.poster }}" width="30%" />
 
       <div class="details-container">
         <div>
@@ -49,7 +49,12 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <button mat-flat-button color="primary" (click)="submitRating()">
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="submitRating()"
+      class="submit-rating-button"
+    >
       Submit Rating
     </button>
   </ng-container>

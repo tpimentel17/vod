@@ -8,7 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SigninComponent } from './modules/authentication/components/signin/signin.component';
 import { SignupComponent } from './modules/authentication/components/signup/signup.component';
 import { PageNotFoundComponent } from './modules/shared/components/page-not-found/page-not-found.component';
-import { ManagerVideoListComponent } from './modules/manager/manager-video-list/manager-video-list.component';
+import { ManagerVideoListComponent } from './modules/manager/components/manager-video-list/manager-video-list.component';
 import { AddVideoFormComponent } from './modules/manager/components/add-video-form/add-video-form.component';
 import { Roles } from './core/enums/authorization.enum';
 import { ClientHomeComponent } from './modules/client/components/client-home/client-home.component';

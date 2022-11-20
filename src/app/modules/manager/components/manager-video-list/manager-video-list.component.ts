@@ -1,8 +1,8 @@
 import { Observable, of } from 'rxjs';
-import { Video } from '../../../core/models/video.model';
-import { VideoService } from '../../../core/api-services/video.service';
+import { Video } from '../../../../core/models/video.model';
+import { VideoService } from '../../../../core/api-services/video.service';
 import { Component, OnInit } from '@angular/core';
-import { BaseComponent } from '../../shared/components/base/base.component';
+import { BaseComponent } from '../../../shared/components/base/base.component';
 
 @Component({
   selector: 'app-manager-video-list',
@@ -23,7 +23,7 @@ export class ManagerVideoListComponent extends BaseComponent implements OnInit {
   remove(id: string) {
     this.videoService.deleteVideo(id).subscribe({
       error: (err) => alert(err.message),
+      complete: () => window.location.reload(),
     });
-    this.videoCatalogue$ = this.videoService.getAllVideos();
   }
 }
